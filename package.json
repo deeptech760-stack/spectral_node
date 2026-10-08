@@ -1,0 +1,50 @@
+{
+  "name": "spectral-node",
+  "version": "1.0.0",
+  "description": "Spectral Node — Network Control Panel",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder build --win --x64"
+  },
+  "build": {
+    "appId": "com.deep.spectralnode",
+    "productName": "Spectral Node",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!node_modules/.cache",
+      "!dist",
+      "config.local.js"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "assets/icon.ico",
+      "sign": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Spectral Node",
+      "uninstallDisplayName": "Spectral Node",
+      "installerIcon": "assets/icon.ico",
+      "allowElevation": true
+    }
+  },
+  "devDependencies": {
+    "electron": "latest",
+    "electron-builder": "latest"
+  },
+  "dependencies": {
+    "pcb-trace-animation": "latest"
+  }
+}

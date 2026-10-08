@@ -1,0 +1,54 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#050a0f"/>
+      <stop offset="100%" stop-color="#03060a"/>
+    </radialGradient>
+    <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="70%" stop-color="#0088cc"/>
+      <stop offset="100%" stop-color="#005588"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Dark navy background -->
+  <circle cx="128" cy="128" r="128" fill="url(#bgGrad)"/>
+  
+  <!-- Outer glow ring -->
+  <circle cx="128" cy="128" r="80" fill="none" stroke="url(#glowGrad)" stroke-width="3" opacity="0.3"/>
+  
+  <!-- Main center circle with glow -->
+  <circle cx="128" cy="128" r="50" fill="url(#glowGrad)" opacity="0.9">
+    <animate attributeName="opacity" values="0.9;0.7;0.9" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Inner bright core -->
+  <circle cx="128" cy="128" r="25" fill="#00ffff" opacity="0.8"/>
+  
+  <!-- Cross trace lines extending from center -->
+  <g stroke="#00d4ff" stroke-width="4" stroke-linecap="round" opacity="0.8">
+    <!-- Up -->
+    <line x1="128" y1="100" x2="128" y2="40"/>
+    <circle cx="128" cy="30" r="6" fill="#ff8c00"/>
+    
+    <!-- Down -->
+    <line x1="128" y1="156" x2="128" y2="216"/>
+    <circle cx="128" cy="226" r="6" fill="#ff8c00"/>
+    
+    <!-- Left -->
+    <line x1="100" y1="128" x2="40" y2="128"/>
+    <circle cx="30" cy="128" r="6" fill="#ff8c00"/>
+    
+    <!-- Right -->
+    <line x1="156" y1="128" x2="216" y2="128"/>
+    <circle cx="226" cy="128" r="6" fill="#ff8c00"/>
+  </g>
+  
+  <!-- Corner accent dots -->
+  <g fill="#ff8c00">
+    <circle cx="50" cy="50" r="4"/>
+    <circle cx="206" cy="50" r="4"/>
+    <circle cx="50" cy="206" r="4"/>
+    <circle cx="206" cy="206" r="4"/>
+  </g>
+</svg>
